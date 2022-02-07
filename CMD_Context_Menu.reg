@@ -1,0 +1,20 @@
+Windows Registry Editor Version 5.00
+
+; Created by me!
+; Add open cmd context menu
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\cmdmenu]
+@="Open Command Prompt Here"
+"Icon"="%SystemRoot%\\system32\\cmd.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\cmdmenu\command]
+@="cmd.exe /k \"cd \"%V\" && Title %V \""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\cmdmenua]
+@="Open Command Prompt Here (Admin)"
+"Icon"="%SystemRoot%\\system32\\cmd.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\cmdmenua\command]
+@="powershell -NoLogo  -WindowStyle Hidden -Command \"Start-Process cmd \\\"/k cd \"%V\" & Title %V \\\" -Verb RunAs\" "
+
+
