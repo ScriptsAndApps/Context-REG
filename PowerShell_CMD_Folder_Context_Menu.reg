@@ -1,0 +1,36 @@
+Windows Registry Editor Version 5.00
+
+; Created by me!
+; Add open Powersehell folder context menu
+
+
+[HKEY_CLASSES_ROOT\Directory\shell\powershellmenu]
+@="Open PowerShell Inside"
+"Icon"="%SystemRoot%\\system32\\WindowsPowerShell\\v1.0\\powershell.exe"
+
+[HKEY_CLASSES_ROOT\Directory\shell\powershellmenu\command]
+@="powershell.exe -noexit -command Set-Location -literalPath '%V'"
+
+[HKEY_CLASSES_ROOT\Directory\shell\powershellmenua]
+@="Open PowerShell Inside (Admin)"
+"Icon"="%SystemRoot%\\system32\\WindowsPowerShell\\v1.0\\powershell.exe"
+
+[HKEY_CLASSES_ROOT\Directory\shell\powershellmenua\command]
+@="powershell -NoLogo -WindowStyle Hidden -Command \"Start-Process powershell \\\"-noexit -command Set-Location -literalPath '%V'\\\" -Verb RunAs\" "
+
+; Add open CMD folder context menu
+
+[HKEY_CLASSES_ROOT\Directory\shell\cmdmenu]
+@="Open Command Prompt Inside"
+"Icon"="%SystemRoot%\\system32\\cmd.exe"
+
+[HKEY_CLASSES_ROOT\Directory\shell\cmdmenu\command]
+@="cmd.exe /k \"cd \"%V\" && Title %V \""
+
+[HKEY_CLASSES_ROOT\Directory\shell\cmdmenua]
+@="Open Command Prompt Inside (Admin)"
+"Icon"="%SystemRoot%\\system32\\cmd.exe"
+
+[HKEY_CLASSES_ROOT\Directory\shell\cmdmenua\command]
+@="powershell -NoLogo  -WindowStyle Hidden -Command \"Start-Process cmd \\\"/k cd \"%V\" & Title %V \\\" -Verb RunAs\" "
+
