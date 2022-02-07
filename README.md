@@ -1,5 +1,5 @@
 # Context-REG
-Windows registry scripts and features
+Windows registry scripts to add context menu items
 
 Background context menu
 
