@@ -1,0 +1,40 @@
+Windows Registry Editor Version 5.00
+
+; Created by me!
+; Add open cmd context menu
+; Add open Powersehell context menu
+
+; powershell
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\powershellmenu]
+@="Open PowerShell Here"
+"Icon"="%SystemRoot%\\system32\\WindowsPowerShell\\v1.0\\powershell.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\powershellmenu\command]
+@="powershell.exe -noexit -command Set-Location -literalPath '%V'"
+
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\powershellmenua]
+@="Open PowerShell Here (Admin)"
+"Icon"="%SystemRoot%\\system32\\WindowsPowerShell\\v1.0\\powershell.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\powershellmenua\command]
+@="powershell -NoLogo  -WindowStyle Hidden -Command \"Start-Process powershell \\\"-noexit -command Set-Location -literalPath '%V'\\\" -Verb RunAs\" "
+
+; cmd
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\cmdmenu]
+@="Open Command Prompt Here"
+"Icon"="%SystemRoot%\\system32\\cmd.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\cmdmenu\command]
+@="cmd.exe /k \"cd \"%V\" && Title %V \""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\cmdmenua]
+@="Open Command Prompt Here (Admin)"
+"Icon"="%SystemRoot%\\system32\\cmd.exe"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\cmdmenua\command]
+@="powershell -NoLogo  -WindowStyle Hidden -Command \"Start-Process cmd \\\"/k cd \"%V\" & Title %V \\\" -Verb RunAs\" "
+
+
