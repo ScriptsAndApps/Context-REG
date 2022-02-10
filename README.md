@@ -1,4 +1,5 @@
-<meta name="google-site-verification" content="pJtV2ln1OAIrpjE8jLMrycZSqOKlm3DnTti1PytBY1M" />
+\<meta name="google-site-verification" content="pJtV2ln1OAIrpjE8jLMrycZSqOKlm3DnTti1PytBY1M" />
+
 # Context-REG
 Windows registry scripts to add context menu items
 
